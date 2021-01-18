@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html>
+
+<head>
+	<title>About </title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+			$("#footerContent").load("/footer.html");
+			$("#navContent").load("/navbar.html");
+		});
+	</script>
+</head>
+
+<body>
+	<main>
+		<nav>
+			<div id="navContent"></div>
+		</nav>
+		<h1>About Me</h1>
+		<p>
+			I am a sophomore computer science major at the University of Maryland, College Park.
+			Within computer science, I am most interested in artificial intelligence and machine learning,
+			but I enjoy learning about all topics. I also have a large interest in math and all other things technology.
+		</p>
+
+		<p>
+			For more information about what I've done check out my <a href="/experience">experience</a> page!
+		</p>
+
+
+	</main>
+	<footer>
+		<div id="footerContent"></div>
+	</footer>
+</body>
+
+</html>
