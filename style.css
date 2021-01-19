@@ -1,0 +1,129 @@
+:root {
+	--text-color: #C5C6C7;
+	--background-color: #0B0C10;
+	--bold-color: #66FCF1;
+	--highlight-color: #45A29E;
+	--alt-background-color: #1F2833;
+	--link-color: var(--highlight-color);
+	--footer-height: 8em;
+}
+
+body a {
+	color: var(--link-color);
+}
+
+h2 {
+	margin-bottom: 0.2em;
+	color: var(--bold-color);
+}
+
+h1 {
+	font-size: 2em;
+	color: var(--bold-color);
+	text-align: center;
+}
+
+body {
+	font-family: "arial";
+	color: var(--text-color);
+	background-color: var(--background-color);
+	margin:0;
+	margin-bottom: - var(--footer-height);
+}
+
+header, footer {
+	padding: 0.75em 1em;
+	background-color: var(--alt-background-color);
+	color: var(--text-color);
+	margin: 0.5em;
+	border-radius: 0.5em;
+}
+
+footer{
+	text-align: center;
+	background-color: var(--alt-background-color);
+	height: var(--footer-height);
+}
+
+footer p, footer a , footer img{
+	margin-top: 1em;
+}
+
+header h1 {
+	line-height: 45px;
+	font-size: 2rem;
+	margin: 0;
+	display: inline;
+	color: var(--bold-color);
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	height: 100%;
+}
+
+nav {
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+	float: right;
+	display: inline;
+}
+
+nav li {
+	position: relative;
+	display: inline-block;
+	list-style-type: none;
+	height: 100%;
+}
+
+nav li a {
+	display: block;
+	color: var(--text-color);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	position: relative;
+	background-color: var(--background-color);
+	border-radius: 0.7em;
+}
+
+nav li a:hover, nav li a:focus {
+	background-color: var(--highlight-color);
+}
+
+.exp-card {
+	width: 500px;
+	margin: 10px;
+	display: inline-block;
+	background-color: var(--alt-background-color);
+	border-radius: 0.2em;
+}
+
+.exp-card h3 {
+	margin: 0;
+	font-size: 1.57em;
+}
+
+.exp-container {
+	padding: 0.01em 1em;
+	margin-top: 0.5em;
+	display: block;
+}
+
+.exp-container p {
+	margin: 0;
+}
+
+.exp-card-top-bot, .exp-card-top-bot h1 {
+	color: var(--highlight-color);
+}
+
+h1 .subtitle {
+	margin-top: -0.1em;
+	font-size: 20px;
+}
+

@@ -4,46 +4,137 @@
 
 <head>
 	<title>Jake P</title>
-
+	<link rel="stylesheet" href="/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
 	<script>
 		$(function () {
 			$("#footerContent").load("/footer.html");
 			$("#navContent").load("/navbar.html");
 		});
+
+		var app = angular.module("app", []);
+		app.controller('exp-cards', ['$scope', function ($scope) {
+			$scope.profexps = [];
+			var profexpval = [
+				{ position: 'Machine Learning Intern', company: "Army Research Lab", location: "Adelphi, MD", timeframe: "Summers of 2018-2020", overview: "Within the Information Sciences Division I performed various machine learning recearch experiments to try and better the Army's knowledge of ML algorithms for autonomous agents." },
+				{ position: 'Crew Leader', company: "Crestview Lawn", location: "Laurel MD", timeframe: "Apr 2017 - Aug 2020", overview: "Helped direct crew in lawn mowing, lawn maintenance and other general landscaping of over 100 properties in local neighborhoods. As well as trained new employees on how to use equipment and various law maintenance skills." }
+			];
+			angular.forEach(profexpval, function (value, key) {
+				$scope.profexps.push(value);
+			});
+
+			$scope.educationexps = [];
+			var profexpval = [
+				{ position: 'BS, Computer Science', company: "University of Maryland", location: "CP, MD", timeframe: "Expected Graduation: Dec 2022", overview: "College Park Scholars: Science, Technology Society" },
+				{ position: 'Highschool', company: "Atholton High School", location: "Columbia MD", timeframe: "Graduated 2019", overview: "Computer Science Carrer Track" }
+			];
+			angular.forEach(profexpval, function (value, key) {
+				$scope.educationexps.push(value);
+			});
+
+			$scope.projexps = [];
+			var projexpval = [
+				{ position: 'This Website ;)', company: "Jake Inc.", location: "College Park, MD", timeframe: "2021", overview: "" },
+				{ position: 'Atholton Raidertime', company: "Atholton ADS", location: "Columbia, MD", timeframe: "2018-2019", overview: "Helped lead a team in designing a website for students to sign up for a classroom during a study hour period. Implemented the login function as well as functioning for saving and retrieving data from a database." },
+				{ position: 'Fraternity Website', company: "Sigma Alpha Epsilon MD Beta", location: "College Park, MD", timeframe: "2020-2021", overview: "Lead a group to create a new website for the fraternity to use. Still awaiting funding for deployment will link HERE" },
+
+			];
+			angular.forEach(projexpval, function (value, key) {
+				$scope.projexps.push(value);
+			});
+		}]);
+
 	</script>
+
 </head>
 
-<body>
+<body ng-app="app" ng-cloak>
 	<main>
 
-		<nav>
-			<div id="navContent"></div>
-		</nav>
+
+		<div id="navContent"></div>
+
 		<h1>Experience</h1>
 
 		<h2>Professional</h2>
-		<ol>
-			<li>Crew Leader</li>
-			<li>ARL Intern</li>
-		</ol>
+
+		<div ng-controller="exp-cards">
+			<element ng-repeat="exp in profexps">
+				<div class="exp-card">
+					<div class="exp-container exp-card-top-bot">
+						<h3>
+							{{exp.position}}
+							<div class="subtitle">{{exp.company}} | {{exp.location}}</div>
+						</h3>
+					</div>
+
+					<div class="exp-container">
+						<p>{{exp.overview}}
+						</p>
+					</div>
+
+					<div class="exp-container exp-card-top-bot">
+						<p>{{exp.timeframe}}</p>
+					</div>
+
+				</div>
+			</element>
+		</div>
+
+
 
 		<h2>Educational</h2>
-		<ol>
-			<li>Atholton High School</li>
-			<li>University of Maryland</li>
-		</ol>
+		<div ng-controller="exp-cards">
+			<element ng-repeat="exp in educationexps">
+				<div class="exp-card">
+					<div class="exp-container exp-card-top-bot">
+						<h3>
+							{{exp.position}}
+							<div class="subtitle">{{exp.company}} | {{exp.location}}</div>
+						</h3>
+					</div>
+
+					<div class="exp-container">
+						<p>{{exp.overview}}
+						</p>
+					</div>
+
+					<div class="exp-container exp-card-top-bot">
+						<p>{{exp.timeframe}}</p>
+					</div>
+
+				</div>
+			</element>
+		</div>
+
 		<h2>Project</h2>
-		<ol>
-			<li>Atholton Raidertime</li>
-		</ol>
+		<div ng-controller="exp-cards">
+			<element ng-repeat="exp in projexps">
+				<div class="exp-card">
+					<div class="exp-container exp-card-top-bot">
+						<h3>
+							{{exp.position}}
+							<div class="subtitle">{{exp.company}} | {{exp.location}}</div>
+						</h3>
+					</div>
 
-		
+					<div class="exp-container">
+						<p>{{exp.overview}}
+						</p>
+					</div>
 
+					<div class="exp-container exp-card-top-bot">
+						<p>{{exp.timeframe}}</p>
+					</div>
+
+				</div>
+			</element>
+		</div>
 	</main>
-	<footer>
-		<div id="footerContent"></div>
-	</footer>
+
+	<div id="footerContent"></div>
+
 </body>
 
 </html>
