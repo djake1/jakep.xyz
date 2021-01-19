@@ -127,3 +127,22 @@ h1 .subtitle {
 	font-size: 20px;
 }
 
+
+
+.buttonlink {
+	font-size: .75em;
+	display: block;
+	color: var(--text-color);
+	text-align: center;
+	padding: 14px 16px;
+	background-color: var(--alt-background-color);
+	width: 10em;
+	border-radius: 0.7em;
+	margin: 1em;
+	text-decoration: none;
+
+}
+
+.buttonlink:hover, .buttonlink:focus {
+	background-color: var(--highlight-color);
+}
