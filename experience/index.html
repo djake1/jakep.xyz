@@ -17,8 +17,8 @@
 		app.controller('exp-cards', ['$scope', function ($scope) {
 			$scope.profexps = [];
 			var profexpval = [
-				{ position: 'Machine Learning Intern', company: "Army Research Lab", location: "Adelphi, MD", timeframe: "asdf", overview: " asdfa" },
-				{ position: 'Crew Leader', company: "Crestview Lawn", location: "Laurel MD", timeframe: "asdf", overview: " asdfa" }
+				{ position: 'Machine Learning Intern', company: "Army Research Lab", location: "Adelphi, MD", timeframe: "Summers of 2018-2020", overview: "Within the Information Sciences Division I performed various machine learning recearch experiments to try and better the Army's knowledge of ML algorithms for autonomous agents." },
+				{ position: 'Crew Leader', company: "Crestview Lawn", location: "Laurel MD", timeframe: "Apr 2017 - Aug 2020", overview: "Helped direct crew in lawn mowing, lawn maintenance and other general landscaping of over 100 properties in local neighborhoods. As well as trained new employees on how to use equipment and various law maintenance skills." }
 			];
 			angular.forEach(profexpval, function (value, key) {
 				$scope.profexps.push(value);
@@ -26,8 +26,8 @@
 
 			$scope.educationexps = [];
 			var profexpval = [
-				{ position: 'BS of cs ', company: "UMD", location: "CP, MD", timeframe: "asdf", overview: " asdfa" },
-				{ position: 'Highschool', company: "Atholton", location: "Columbia MD", timeframe: "asdf", overview: " asdfa" }
+				{ position: 'BS, Computer Science', company: "University of Maryland", location: "CP, MD", timeframe: "Expected Graduation: Dec 2022", overview: "College Park Scholars: Science, Technology Society" },
+				{ position: 'Highschool', company: "Atholton High School", location: "Columbia MD", timeframe: "Graduated 2019", overview: "Computer Science Carrer Track" }
 			];
 			angular.forEach(profexpval, function (value, key) {
 				$scope.educationexps.push(value);
@@ -35,7 +35,10 @@
 
 			$scope.projexps = [];
 			var projexpval = [
-				{ position: 'proj 1 ', company: "UMD", location: "CP, MD", timeframe: "asdf", overview: " asdfa" }
+				{ position: 'This Website ;)', company: "Jake Inc.", location: "College Park, MD", timeframe: "2021", overview: "" },
+				{ position: 'Atholton Raidertime', company: "Atholton ADS", location: "Columbia, MD", timeframe: "2018-2019", overview: "Helped lead a team in designing a website for students to sign up for a classroom during a study hour period. Implemented the login function as well as functioning for saving and retrieving data from a database." },
+				{ position: 'Fraternity Website', company: "Sigma Alpha Epsilon MD Beta", location: "College Park, MD", timeframe: "2020-2021", overview: "Lead a group to create a new website for the fraternity to use. Still awaiting funding for deployment will link HERE" },
+
 			];
 			angular.forEach(projexpval, function (value, key) {
 				$scope.projexps.push(value);
@@ -49,21 +52,21 @@
 <body ng-app="app" ng-cloak>
 	<main>
 
-	
-			<div id="navContent"></div>
-		
+
+		<div id="navContent"></div>
+
 		<h1>Experience</h1>
 
 		<h2>Professional</h2>
 
 		<div ng-controller="exp-cards">
-			<div ng-repeat="exp in profexps">
+			<element ng-repeat="exp in profexps">
 				<div class="exp-card">
 					<div class="exp-container exp-card-top-bot">
-						<h1>
+						<h3>
 							{{exp.position}}
 							<div class="subtitle">{{exp.company}} | {{exp.location}}</div>
-						</h1>
+						</h3>
 					</div>
 
 					<div class="exp-container">
@@ -76,20 +79,20 @@
 					</div>
 
 				</div>
-			</div>
+			</element>
 		</div>
 
 
 
 		<h2>Educational</h2>
 		<div ng-controller="exp-cards">
-			<div ng-repeat="exp in educationexps">
+			<element ng-repeat="exp in educationexps">
 				<div class="exp-card">
 					<div class="exp-container exp-card-top-bot">
-						<h1>
+						<h3>
 							{{exp.position}}
 							<div class="subtitle">{{exp.company}} | {{exp.location}}</div>
-						</h1>
+						</h3>
 					</div>
 
 					<div class="exp-container">
@@ -102,18 +105,18 @@
 					</div>
 
 				</div>
-			</div>
+			</element>
 		</div>
 
 		<h2>Project</h2>
 		<div ng-controller="exp-cards">
-			<div ng-repeat="exp in projexps">
+			<element ng-repeat="exp in projexps">
 				<div class="exp-card">
 					<div class="exp-container exp-card-top-bot">
-						<h1>
+						<h3>
 							{{exp.position}}
 							<div class="subtitle">{{exp.company}} | {{exp.location}}</div>
-						</h1>
+						</h3>
 					</div>
 
 					<div class="exp-container">
@@ -126,11 +129,12 @@
 					</div>
 
 				</div>
-			</div>
+			</element>
 		</div>
 	</main>
-	<footer>
-		<div id="footerContent"></div>
-	</footer>
+
+	<div id="footerContent"></div>
+
 </body>
+
 </html>

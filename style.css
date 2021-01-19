@@ -20,6 +20,7 @@ h2 {
 h1 {
 	font-size: 2em;
 	color: var(--bold-color);
+	text-align: center;
 }
 
 body {
@@ -94,21 +95,17 @@ nav li a:hover, nav li a:focus {
 	background-color: var(--highlight-color);
 }
 
-.exp-cards {
-	display: inline-block;
-}
-
 .exp-card {
-	width: 33%;
+	width: 500px;
 	margin: 10px;
 	display: inline-block;
 	background-color: var(--alt-background-color);
 	border-radius: 0.2em;
-
 }
 
-.exp-card h1 {
+.exp-card h3 {
 	margin: 0;
+	font-size: 1.57em;
 }
 
 .exp-container {
